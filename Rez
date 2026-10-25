@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anthony Alvrez</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #111;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header { padding: 90px 20px 60px; }
+    h1 {
+      font-size: clamp(25px, 5vw, 44px);
+      font-weight: 400;
+      letter-spacing: 6px;
+      margin: 0;
+    }
+    .gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      columns: 3 250px;
+      column-gap: 15px;
+    }
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      break-inside: avoid;
+    }
+    footer {
+      padding: 50px 20px;
+      color: #999;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ANTHONY ALVREZ</h1>
+  </header>
+  <main class="gallery" id="gallery"></main>
+  <footer>© 2026 Anthony Alvrez</footer>
+  <script>
+    fetch("photos.json")
+      .then(r => r.json())
+      .then(photos => {
+        const gallery = document.getElementById("gallery");
+        photos.forEach(file => {
+          const img = document.createElement("img");
+          img.src = "images/" + encodeURIComponent(file);
+          img.alt = "Photograph";
+          img.loading = "lazy";
+          gallery.appendChild(img);
+        });
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>
