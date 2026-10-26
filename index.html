@@ -40,6 +40,20 @@
       color: #999;
       font-size: 13px;
     }
+ 
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.socials img {
+  width: 22px;
+  height: 22px;
+}
+
   </style>
 </head>
 <body>
@@ -47,7 +61,18 @@
     <h1>ANTHONY ALVREZ</h1>
   </header>
   <main class="gallery" id="gallery"></main>
-  <footer>© 2008 Anthony Alvrez</footer>
+  
+<footer>
+  <div class="socials">
+    <a href="https://instagram.com/anthonyalvrez" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/999999" alt="Instagram"></a>
+    <a href="https://tiktok.com/@anthonyalvrez" aria-label="TikTok"><img src="https://cdn.simpleicons.org/tiktok/999999" alt="TikTok"></a>
+    <a href="https://facebook.com/alvrezanthony" aria-label="Facebook"><img src="https://cdn.simpleicons.org/facebook/999999" alt="Facebook"></a>
+    <a href="https://youtube.com/@anthonyalvrez" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/999999" alt="YouTube"></a>
+    <a href="https://x.com/anthonyalvrez" aria-label="X"><img src="https://cdn.simpleicons.org/x/999999" alt="X"></a>
+  </div>
+  © 2008 Anthony Alvrez
+</footer>
+
   <script>
     fetch("photos.json")
       .then(r => r.json())
